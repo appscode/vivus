@@ -939,7 +939,7 @@ Vivus.prototype.parseAttr = function (element) {
  */
 Vivus.prototype.isInViewport = function (el, h) {
   var scrolled   = this.scrollY(),
-    viewed       = scrolled + window.innerHeight; // this.getViewportH(), @sajib
+    viewed       = scrolled + window.innerHeight, // this.getViewportH(), @sajib
     elBCR        = el.getBoundingClientRect(),
     elHeight     = elBCR.height,
     elTop        = scrolled + elBCR.top,
