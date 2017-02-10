@@ -939,7 +939,7 @@ Vivus.prototype.parseAttr = function (element) {
  */
 Vivus.prototype.isInViewport = function (el, h) {
   var scrolled   = this.scrollY(),
-    viewed       = scrolled + this.getViewportH(),
+    viewed       = scrolled + window.innerHeight; // this.getViewportH(), @sajib
     elBCR        = el.getBoundingClientRect(),
     elHeight     = elBCR.height,
     elTop        = scrolled + elBCR.top,
@@ -965,9 +965,11 @@ Vivus.prototype.docElem = window.document.documentElement;
  *
  * @return {integer} Viewport height
  */
+
+/*
 Vivus.prototype.getViewportH = function () {
-  var client = this.docElem.clientHeight,
-    inner = window.innerHeight;
+  var client = this.docElem.clientHeight,    // this.docElem.clientHeight is returning 1516 always
+    inner = window.innerHeight;              // window.innerHeight giving the correct value
 
   if (client < inner) {
     return inner;
@@ -976,6 +978,8 @@ Vivus.prototype.getViewportH = function () {
     return client;
   }
 };
+*/
+
 
 /**
  * Get the page Y offset
